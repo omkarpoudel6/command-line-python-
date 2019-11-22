@@ -5,8 +5,8 @@ def takeinput():
 def checking_command(command):
     if command=="help":
         help()
-    if command=="lookip":
-        lookip()
+    if command=="checkip":
+        checkip()
     if command=="banner":
         banner()
     if command=="testcon":
@@ -19,16 +19,22 @@ def checking_command(command):
         remdir()
     if command=="remfile":
         remfile()
-    if command=="visitsite":
-        vstsite()
+    if command=="openurl":
+        openurl()
     if command=="traceip":
         traceip()
+    if command=="devip":
+        devip()
+
+def devip():
+    print("Displays all the devices ip address connected to the network")
+    takeinput()
 
 def traceip():
     print("This command will trace the specified ip")
     takeinput()
 
-def vstsite():
+def openurl():
     print("This command will open the specified site in the default web browser")
     takeinput()
 
@@ -53,14 +59,15 @@ def help():
     print("crefile                Creates a file in specified location")
     print("remdir                 Deletes a directory from the specified location")
     print("remfile                Deletes a file from the specified location")
-    print("vstsite                Opens the specified site in the default web browser")
+    print("openurl                Opens the specified site in the default web browser")
     print("traceip                Traces the specified ip")
-    print("lookip                 Displays ip address of the device")
+    print("checkip                Displays ip address of the device")
     print("banner                 Displays different background pic each time we type this command")
     print("testcon                Checks whether there is internet connection or not")
+    print("devip                  Displays all the devices ip address connected to the network")
     takeinput()
 
-def lookip():
+def checkip():
     print("This command will display ip address of the device")
     takeinput()
 
