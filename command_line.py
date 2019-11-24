@@ -1,5 +1,7 @@
 import random
 import sys
+import webbrowser
+import os
 
 def takeinput():
     command=input(">")
@@ -30,6 +32,25 @@ def checking_command(command):
         devip()
     elif command=="exit":
         sys.exit()
+    elif command=="dirch":
+        dirch()
+
+def dirch():
+    dir=input("(dirch)>")
+    if dir=="back":
+        takeinput()
+    else:
+        try:
+            os.chdir(dir)
+            print("(",dir,")>>",end=" ")
+            command1=input()
+            if command1=="credir":
+                    credir(dir)
+            elif command1=="back":
+                dirch()
+        except:
+            print("Error!!! enter valid path")
+            dirch()
 
 
 def devip():
@@ -41,7 +62,13 @@ def traceip():
     takeinput()
 
 def openurl():
-    print("This command will open the specified site in the default web browser")
+    #print("This command will open the specified site in the default web browser")
+    url=input("(openurl)>>")
+    try:
+        urls="https://%s"%(url)
+        webbrowser.open_new_tab(urls)
+    except:
+        print("Error!!! enter valid url")
     takeinput()
 
 def remfile():
@@ -61,16 +88,17 @@ def help():
     print("Commands               Descriptions")
     print("\n")
     print("help                   Displays all the available commands with their description")
-    print("credir                 Creates directory in specified location")
-    print("crefile                Creates a file in specified location")
-    print("remdir                 Deletes a directory from the specified location")
-    print("remfile                Deletes a file from the specified location")
+    print("credir                 Creates directory in specified location should be used inside dirch command")
+    print("crefile                Creates a file in specified location should be used inside dirch command")
+    print("remdir                 Deletes a directory from the specified location should be used inside dirch command")
+    print("remfile                Deletes a file from the specified location should be used inside dirch command")
     print("openurl                Opens the specified site in the default web browser")
     print("traceip                Traces the specified ip")
     print("checkip                Displays ip address of the device")
     print("banner                 Displays different background pic each time we type this command")
     print("testcon                Checks whether there is internet connection or not")
     print("devip                  Displays all the devices ip address connected to the network")
+    print("dirch                  Changes current working dirctory")
     takeinput()
 
 def checkip():
@@ -82,8 +110,16 @@ def testcon():
     print("This command will check whether there is internet connection or not")
     takeinput()
 
-def credir():
+def credir(dir):
     print("This command will create directory in specified location")
+    print("(", dir, "#credir)>>", end=" ")
+    com = input()
+    if com=="back":
+        dirch()
+    else:
+        dir1 = dir + com
+        os.mkdir(dir1)
+        dirch()
 
 def first():
     print("################################################################################################")

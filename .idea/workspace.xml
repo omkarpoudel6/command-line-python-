@@ -25,7 +25,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rockpaperscissor/project.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../homepractice/image.py" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -39,7 +39,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.command_line">
     <configuration name="command_line" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="command line" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,9 +61,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="image" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="command line" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../homepractice" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../homepractice/image.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.command_line" />
+        <item itemvalue="Python.image" />
       </list>
     </recent_temporary>
   </component>
