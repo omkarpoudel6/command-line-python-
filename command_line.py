@@ -1,3 +1,6 @@
+import random
+
+
 def takeinput():
     command=input(">")
     checking_command(command)
@@ -25,6 +28,7 @@ def checking_command(command):
         traceip()
     if command=="devip":
         devip()
+
 
 def devip():
     print("Displays all the devices ip address connected to the network")
@@ -71,9 +75,6 @@ def checkip():
     print("This command will display ip address of the device")
     takeinput()
 
-def banner():
-    print("This command will display different banner each time we type this command")
-    takeinput()
 
 def testcon():
     print("This command will check whether there is internet connection or not")
@@ -82,7 +83,94 @@ def testcon():
 def credir():
     print("This command will create directory in specified location")
 
-print("##########################################################")
-print("               Welcome to Command Line                    ")
-print("\n")
-takeinput()
+def first():
+    print("################################################################################################")
+    print("                                     Welcome to Command Line                                    ")
+    print("\n")
+    print("######  #####     #     #           #       #     #     #       ######  #####  #       ")
+    print("#    #  #       #   #   #           #   #   #   #   #   # #     #    #    #    # #     ")
+    print("#    #  #      #     #  #           #   #   #  #     #  #  #    #    #    #    #  #    ")
+    print("#    #  #      #     #  #           #   #   #  #     #  #   #   #    #    #    #   #   ")
+    print("######  #####  #######  #           #   #   #  #######  #    #  ######    #    #    #  ")
+    print("# #     #      #     #  #           #       #  #     #  #   #   # #       #    #   #   ")
+    print("#  #    #      #     #  #           #       #  #     #  #  #    #  #      #    #  #    ")
+    print("#   #   #      #     #  #           #       #  #     #  # #     #   #     #    # #     ")
+    print("#    #  #####  #     #  #####       #       #  #     #  #       #    #  #####  #       ")
+    print("\n")
+    takeinput()
+
+def banner():
+    #print("This command will display different banner each time we type this command")
+    rand=random.randint(0,12)
+    if rand==0:
+        print("\n")
+        print("######  #####     #     #           #       #     #     #       ######  #####  #       ")
+        print("#    #  #       #   #   #           #   #   #   #   #   # #     #    #    #    # #     ")
+        print("#    #  #      #     #  #           #   #   #  #     #  #  #    #    #    #    #  #    ")
+        print("#    #  #      #     #  #           #   #   #  #     #  #   #   #    #    #    #   #   ")
+        print("######  #####  #######  #           #   #   #  #######  #    #  ######    #    #    #  ")
+        print("# #     #      #     #  #           #       #  #     #  #   #   # #       #    #   #   ")
+        print("#  #    #      #     #  #           #       #  #     #  #  #    #  #      #    #  #    ")
+        print("#   #   #      #     #  #           #       #  #     #  # #     #   #     #    # #     ")
+        print("#    #  #####  #     #  #####       #       #  #     #  #       #    #  #####  #       ")
+        print("\n")
+        takeinput()
+
+    elif rand==1:
+        print("\n");
+        print("######     #     #     #  ######  ######  ")
+        print("#    #   #   #   #  #  #  #    #  #       ")
+        print("#    #  #     #  #  #  #  #    #  #       ")
+        print("#    #  #     #  #  #  #  #    #  #       ")
+        print("######  #######  #  #  #  #    #  ######  ")
+        print("# #     #     #  #     #  #    #       #  ")
+        print("#  #    #     #  #     #  #    #       #  ")
+        print("#   #   #     #  #     #  #    #       #  ")
+        print("#    #  #     #  #     #  ######  ######  ")
+        print("\n")
+        takeinput()
+
+    elif rand==2:
+        print("\n");
+        print("#     #     #     ######     #     #     #  ")
+        print("#     #   #   #   #    #   #   #   # #   #  ")
+        print("#     #  #     #  #    #  #     #  #  #  #  ")
+        print("#     #  #     #  #    #  #######  #  #  #  ")
+        print("#     #  #######  ######  #     #  #   # #  ")
+        print("#     #  #     #  # #     #     #  #   # #  ")
+        print(" #   #   #     #  #  #    #     #  #   # #  ")
+        print("  # #    #     #  #   #   #     #  #    ##  ")
+        print("   #     #     #  #    #  #     #  #     #  ")
+        print("\n")
+        takeinput()
+
+    elif rand==3:
+        print("\n");
+        print("######     #     ######  #    #     #       ###     #    #       ")
+        print("#        #   #   #    #  #    #   #  #       #    #  #   #       ")
+        print("#       #     #  #    #  #    #  #    #      #   #    #  #       ")
+        print("#       #     #  #    #  #    #  #    #      #   #    #  #       ")
+        print("#       #######  ######  #    #  ######      #   ######  #       ")
+        print("#       #     #  # #     #    #  #    #      #   #    #  #       ")
+        print("#       #     #  #  #     #   #  #    #      #   #    #  #       ")
+        print("#       #     #  #   #     # #   #    #  #   #   #    #  #       ")
+        print("######  #     #  #    #     #    #    #  #####   #    #  ######  ")
+        print("\n")
+        takeinput()
+
+    elif rand==4:
+        print("\n");
+        print("#       #     #     ######  ######  ######  #       #       ######  ")
+        print("#   #   #   #   #   #    #  #       #       #       #       #    #  ")
+        print("#   #   #  #     #  #    #  #       #       #       #       #    #  ")
+        print("#   #   #  #     #  #    #  #       #       #       #       #    #  ")
+        print("#   #   #  #######  ######  #       ######  #       #       #    #  ")
+        print("#       #  #     #  # #     #       #       #       #       #    #  ")
+        print("#       #  #     #  #  #    #       #       #       #       #    #  ")
+        print("#       #  #     #  #   #   #       #       #       #       #    #  ")
+        print("#       #  #     #  #    #  ######  ######  ######  ######  ######  ")
+        print("\n")
+        takeinput()
+
+
+first()
