@@ -1,5 +1,5 @@
 import random
-
+import sys
 
 def takeinput():
     command=input(">")
@@ -8,26 +8,28 @@ def takeinput():
 def checking_command(command):
     if command=="help":
         help()
-    if command=="checkip":
+    elif command=="checkip":
         checkip()
-    if command=="banner":
+    elif command=="banner":
         banner()
-    if command=="testcon":
+    elif command=="testcon":
         testcon()
-    if command=="credir":
+    elif command=="credir":
         credir()
-    if command=="crefile":
+    elif command=="crefile":
         crefile()
-    if command=="remdir":
+    elif command=="remdir":
         remdir()
-    if command=="remfile":
+    elif command=="remfile":
         remfile()
-    if command=="openurl":
+    elif command=="openurl":
         openurl()
-    if command=="traceip":
+    elif command=="traceip":
         traceip()
-    if command=="devip":
+    elif command=="devip":
         devip()
+    elif command=="exit":
+        sys.exit()
 
 
 def devip():
@@ -213,6 +215,36 @@ def banner():
         print("#       #  ######  #       #    #  #####  ######  ")
         print("\n")
         takeinput()
+
+    elif rand==8:
+        print("\n")
+        print("######     #     #       ######  ")
+        print("#    #   #   #   #       #       ")
+        print("#    #  #     #  #       #       ")
+        print("#    #  #     #  #       #       ")
+        print("######  #######  #       ######  ")
+        print("#    #  #     #  #       #       ")
+        print("#    #  #     #  #       #       ")
+        print("#    #  #     #  #       #       ")
+        print("######  #     #  ######  ######  ")
+        print("\n")
+        takeinput()
+
+    elif rand==9:
+        print("\n");
+        print("#    #     #     ######     #     ######  #       ")
+        print("#    #   #   #        #   #   #   #    #  # #     ")
+        print("#    #  #     #      #   #     #  #    #  #  #    ")
+        print("#    #  #     #     #    #     #  #    #  #   #   ")
+        print("######  #######     #    #######  ######  #    #  ")
+        print("#    #  #     #    #     #     #  # #     #   #   ")
+        print("#    #  #     #    #     #     #  #  #    #  #    ")
+        print("#    #  #     #   #      #     #  #   #   # #     ")
+        print("#    #  #     #  ######  #     #  #    #  #       ")
+        print("\n")
+        takeinput()
+
+    
 
 
 
