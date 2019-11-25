@@ -2,6 +2,7 @@ import random
 import sys
 import webbrowser
 import os
+import socket
 
 def takeinput():
     command=input(">")
@@ -34,6 +35,12 @@ def checking_command(command):
         sys.exit()
     elif command=="dirch":
         dirch()
+    elif command=="pwdir":
+        pwdir()
+
+def pwdir():
+    print(os.getcwd())
+    takeinput()
 
 def dirch():
     dir=input("(dirch)>")
@@ -55,7 +62,7 @@ def dirch():
 
 def devip():
     print("Displays all the devices ip address connected to the network")
-    takeinput()
+
 
 def traceip():
     print("This command will trace the specified ip")
@@ -103,11 +110,24 @@ def help():
 
 def checkip():
     print("This command will display ip address of the device")
+    try:
+        s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+        s.connect(("google.com",80))
+        print("IP: ",s.getsockname()[0])
+    except:
+        print("Error!!! there is no internet connection.")
     takeinput()
 
 
 def testcon():
     print("This command will check whether there is internet connection or not")
+    try:
+        s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+        s.connect(("google.com",80))
+        print("There is internet connection.")
+    except:
+        print("There is no internet connection.")
+    takeinput()
     takeinput()
 
 def credir(dir):
