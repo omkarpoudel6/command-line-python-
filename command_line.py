@@ -17,14 +17,6 @@ def checking_command(command):
         banner()
     elif command=="testcon":
         testcon()
-    elif command=="credir":
-        credir()
-    elif command=="crefile":
-        crefile()
-    elif command=="remdir":
-        remdir()
-    elif command=="remfile":
-        remfile()
     elif command=="openurl":
         openurl()
     elif command=="traceip":
@@ -37,6 +29,9 @@ def checking_command(command):
         dirch()
     elif command=="pwdir":
         pwdir()
+    else:
+        print("The specified command is not recognized")
+        takeinput()
 
 def pwdir():
     print(os.getcwd())
@@ -46,6 +41,8 @@ def dirch():
     dir=input("(dirch)>")
     if dir=="back":
         takeinput()
+    elif dir=="help":
+        print("hello")
     else:
         try:
             os.chdir(dir)
@@ -53,6 +50,8 @@ def dirch():
             command1=input()
             if command1=="credir":
                     credir(dir)
+            if command1=="crefile":
+                    crefile(dir)
             elif command1=="back":
                 dirch()
         except:
@@ -86,8 +85,14 @@ def remdir():
     print("This command will delete a directory from the specified location")
     takeinput()
 
-def crefile():
+def crefile(dir):
     print("This command will create a file in specified location")
+    print("(",dir,") #crefile>>",end=" ")
+    com=input()
+    if com=="back":
+        dirch()
+    else:
+        open(com,"w+")
     takeinput()
 
 def help():
