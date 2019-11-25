@@ -29,9 +29,24 @@ def checking_command(command):
         dirch()
     elif command=="pwdir":
         pwdir()
+    elif command=="urlip":
+        urlip()
     else:
         print("The specified command is not recognized")
         takeinput()
+
+def urlip():
+    print("(urlip)>",end=" ")
+    hostname=input()
+    if hostname=="back":
+        takeinput()
+    else:
+        try:
+            hostip=socket.gethostbyname(hostname)
+            print("IP: ",hostip)
+        except:
+            print("Enter Valid URL")
+    takeinput()
 
 def pwdir():
     print(os.getcwd())
@@ -111,6 +126,8 @@ def help():
     print("testcon                Checks whether there is internet connection or not")
     print("devip                  Displays all the devices ip address connected to the network")
     print("dirch                  Changes current working dirctory")
+    print("pwdir                  Displays the current working directory")
+    print("urlip                  Finds ip of specified website")
     takeinput()
 
 def checkip():
