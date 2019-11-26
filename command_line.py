@@ -31,9 +31,14 @@ def checking_command(command):
         pwdir()
     elif command=="urlip":
         urlip()
+    elif command=="lsdir":
+        lsdir()
     else:
         print("The specified command is not recognized")
         takeinput()
+
+def lsdir():
+    print("displays all files of current directory")
 
 def urlip():
     print("(urlip)>",end=" ")
@@ -115,19 +120,19 @@ def help():
     print("Commands               Descriptions")
     print("\n")
     print("help                   Displays all the available commands with their description")
-    print("credir                 Creates directory in specified location should be used inside dirch command")
-    print("crefile                Creates a file in specified location should be used inside dirch command")
+    print("credir                 Creates directory in specified location should be used inside dirch command(done)")
+    print("crefile                Creates a file in specified location should be used inside dirch command(done)")
     print("remdir                 Deletes a directory from the specified location should be used inside dirch command")
     print("remfile                Deletes a file from the specified location should be used inside dirch command")
-    print("openurl                Opens the specified site in the default web browser")
+    print("openurl                Opens the specified site in the default web browser(done)")
     print("traceip                Traces the specified ip")
-    print("checkip                Displays ip address of the device")
-    print("banner                 Displays different background pic each time we type this command")
-    print("testcon                Checks whether there is internet connection or not")
+    print("checkip                Displays ip address of the device(done)")
+    print("banner                 Displays different background pic each time we type this command(done)")
+    print("testcon                Checks whether there is internet connection or not(done)")
     print("devip                  Displays all the devices ip address connected to the network")
-    print("dirch                  Changes current working dirctory")
-    print("pwdir                  Displays the current working directory")
-    print("urlip                  Finds ip of specified website")
+    print("dirch                  Changes current working dirctory(done)")
+    print("pwdir                  Displays the current working directory(done)")
+    print("urlip                  Finds ip of specified website(done)")
     takeinput()
 
 def checkip():
@@ -212,15 +217,15 @@ def banner():
 
     elif rand==2:
         print("\n");
-        print("#     #     #     ######     #     #     #  ")
-        print("#     #   #   #   #    #   #   #   # #   #  ")
-        print("#     #  #     #  #    #  #     #  #  #  #  ")
-        print("#     #  #     #  #    #  #######  #  #  #  ")
-        print("#     #  #######  ######  #     #  #   # #  ")
-        print("#     #  #     #  # #     #     #  #   # #  ")
-        print(" #   #   #     #  #  #    #     #  #   # #  ")
-        print("  # #    #     #  #   #   #     #  #    ##  ")
-        print("   #     #     #  #    #  #     #  #     #  ")
+        print("#     #     #     ######     #     #     #  ######  ")
+        print("#     #   #   #   #    #   #   #   # #   #  #       ")
+        print("#     #  #     #  #    #  #     #  #  #  #  #       ")
+        print("#     #  #     #  #    #  #######  #  #  #  #       ")
+        print("#     #  #######  ######  #     #  #   # #  ######  ")
+        print("#     #  #     #  # #     #     #  #   # #  #       ")
+        print(" #   #   #     #  #  #    #     #  #   # #  #       ")
+        print("  # #    #     #  #   #   #     #  #    ##  #       ")
+        print("   #     #     #  #    #  #     #  #     #  ######  ")
         print("\n")
         takeinput()
 
