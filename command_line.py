@@ -90,6 +90,11 @@ def traceip():
     print("(traceip)>>", end="")
     ip = input()
     url = "https://whatismyipaddress.com/ip/%s" % (ip)
+    uClient = requests.get(url)
+    uClient.close()
+    soup = bs4.BeautifulSoup(uClient.text, "html.parser")
+    table = soup.findAll("table")
+    d = len(table)
 
 def openurl():
     #print("This command will open the specified site in the default web browser")
