@@ -3,6 +3,8 @@ import sys
 import webbrowser
 import os
 import socket
+import requests
+import bs4
 
 def takeinput():
     command=input(">")
@@ -84,8 +86,10 @@ def devip():
 
 
 def traceip():
-    print("This command will trace the specified ip")
-    takeinput()
+    print("Enter ip address to trace")
+    print("(traceip)>>", end="")
+    ip = input()
+    url = "https://whatismyipaddress.com/ip/%s" % (ip)
 
 def openurl():
     #print("This command will open the specified site in the default web browser")
