@@ -95,6 +95,12 @@ def traceip():
     soup = bs4.BeautifulSoup(uClient.text, "html.parser")
     table = soup.findAll("table")
     d = len(table)
+    if d == 0:
+        print("Enter valid Ip address")
+    else:
+        for i in range(0, d):
+            print(table[i].getText())
+    takeinput()
 
 def openurl():
     #print("This command will open the specified site in the default web browser")
