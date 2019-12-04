@@ -5,6 +5,7 @@ import os
 import socket
 import requests
 import bs4
+import shutil
 
 def takeinput():
     command=input(">")
@@ -35,6 +36,8 @@ def checking_command(command):
         urlip()
     elif command=="lsdir":
         lsdir()
+    elif command=="exit":
+        exit()
     else:
         print("The specified command is not recognized")
         takeinput()
@@ -64,16 +67,30 @@ def dirch():
     if dir=="back":
         takeinput()
     elif dir=="help":
-        print("hello")
+        print("Commands                           Description")
+        print("\n")
+        print("credir                             Creates a new directory in the current directory")
+        print("crefile                            Creates a new file in the current directory")
+        print("remfile                            Removes specified file for the current directory")
+        print("remdir                             Removes empty directory for the current directory")
+        print("cremdir                            Removes directory for the current directory")
+        print("back                               Rolls back to change directory command")
+        dirch()
     else:
         try:
             os.chdir(dir)
             print("(",dir,")>>",end=" ")
             command1=input()
             if command1=="credir":
-                    credir(dir)
-            if command1=="crefile":
-                    crefile(dir)
+                credir(dir)
+            elif command1=="crefile":
+                crefile(dir)
+            elif command1=="remfile":
+                remfile(dir)
+            elif command1=="remdir":
+                remdir(dir)
+            elif command1=="cremdir":
+                cremdir(dir)
             elif command1=="back":
                 dirch()
         except:
@@ -112,13 +129,44 @@ def openurl():
         print("Error!!! enter valid url")
     takeinput()
 
-def remfile():
+def remfile(dir):
     print("This command will delete a file from the specified location")
-    takeinput()
+    print("(",dir,") #(remfile)>>",end=" ")
+    com=input()
+    if com=="back":
+        dirch()
+    else:
+        os.remove(com)
+        dirch()
 
-def remdir():
+def remdir(dir):
     print("This command will delete a directory from the specified location")
-    takeinput()
+    print("(", dir, ") #(remdir)>>", end=" ")
+    com = input()
+    if com == "back":
+        dirch()
+    else:
+        coms = dir + com
+        os.rmdir(coms)
+        dirch()
+
+def cremdir(dir):
+    print("This command will delete a directory from the specified location")
+    print("(", dir, ") #(cremdir)>>", end=" ")
+    com = input()
+    if com == "back":
+        dirch()
+    else:
+        print("Are you sure you want to continue this will delete the folder and all it's inside contents y/n: ",end=" ")
+        c=input()
+        choice=c.lower()
+        if choice=="y":
+            coms = dir + com
+            shutil.rmtree(coms)
+        #os.rmdir(coms)
+            dirch()
+        else:
+            dirch()
 
 def crefile(dir):
     print("This command will create a file in specified location")
@@ -128,6 +176,7 @@ def crefile(dir):
         dirch()
     else:
         open(com,"w+")
+        dirch()
     takeinput()
 
 def help():
@@ -138,7 +187,7 @@ def help():
     print("credir                 Creates directory in specified location should be used inside dirch command(done)")
     print("crefile                Creates a file in specified location should be used inside dirch command(done)")
     print("remdir                 Deletes a directory from the specified location should be used inside dirch command")
-    print("remfile                Deletes a file from the specified location should be used inside dirch command")
+    print("remfile                Deletes a file from the specified location should be used inside dirch command(done)")
     print("openurl                Opens the specified site in the default web browser(done)")
     print("traceip                Traces the specified ip")
     print("checkip                Displays ip address of the device(done)")
@@ -148,6 +197,7 @@ def help():
     print("dirch                  Changes current working dirctory(done)")
     print("pwdir                  Displays the current working directory(done)")
     print("urlip                  Finds ip of specified website(done)")
+    print("exit                   Quits the program")
     takeinput()
 
 def checkip():
