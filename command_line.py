@@ -103,6 +103,18 @@ def dirch():
 
 def devip():
     print("Displays all the devices ip address connected to the network")
+    print("(devip)>>",end="")
+    ip=input()
+    if ip=="back":
+        takeinput()
+    else:
+        try:
+            command="nmap -sP "+ip+"/24"
+            os.system(command)
+            takeinput()
+        except:
+            print("Invalid ip address!!!")
+            devip()
 
 
 def traceip():
@@ -192,7 +204,7 @@ def help():
     print("remdir                 Deletes a directory from the specified location should be used inside dirch command")
     print("remfile                Deletes a file from the specified location should be used inside dirch command(done)")
     print("openurl                Opens the specified site in the default web browser(done)")
-    print("traceip                Traces the specified ip")
+    print("traceip                Traces the specified ip(done)")
     print("checkip                Displays ip address of the device(done)")
     print("banner                 Displays different background pic each time we type this command(done)")
     print("testcon                Checks whether there is internet connection or not(done)")
