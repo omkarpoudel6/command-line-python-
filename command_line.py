@@ -39,11 +39,24 @@ def checking_command(command):
         urlip()
     elif command=="lsdir":
         lsdir()
+    elif command=="scnport":
+        scnport()
     elif command=="exit":
         exit()
     else:
         print("The specified command is not recognized")
         takeinput()
+
+def scnport():
+    print("scans for open ports in a system")
+    print("(scnport)>",end=" ")
+    ip=input()
+    if ip=="back":
+        takeinput()
+    else:
+        command="nmap -p- "+ip
+        os.system(command)
+        scnport()
 
 def lsdir():
     print("displays all files of current directory")
@@ -70,6 +83,7 @@ def dirch():
     if dir=="back":
         takeinput()
     elif dir=="help":
+        print("First move to the desired directories and use these commands.")
         print("Commands                           Description")
         print("\n")
         print("credir                             Creates a new directory in the current directory")
@@ -95,6 +109,9 @@ def dirch():
             elif command1=="cremdir":
                 cremdir(dir)
             elif command1=="back":
+                dirch()
+            else:
+                print(command1+" command is not recognized")
                 dirch()
         except:
             print("Error!!! enter valid path")
@@ -208,10 +225,12 @@ def help():
     print("checkip                Displays ip address of the device(done)")
     print("banner                 Displays different background pic each time we type this command(done)")
     print("testcon                Checks whether there is internet connection or not(done)")
-    print("devip                  Displays all the devices ip address connected to the network")
+    print("devip                  Displays all the devices ip address connected to the network(done)")
     print("dirch                  Changes current working dirctory(done)")
     print("pwdir                  Displays the current working directory(done)")
     print("urlip                  Finds ip of specified website(done)")
+    print("scnport                Scans to find open ports in a system")
+    print("lsdir                  List all the files and folders of current working directory")
     print("exit                   Quits the program")
     takeinput()
 
